@@ -15,4 +15,8 @@ class IdeasController extends Controller
 
         return view('ideas.index')->with('ideas', Idea::all());
     }
+
+    public function show($ideaId){
+        return view('ideas.show')->with('idea', Idea::find($ideaId));
+    }
 }

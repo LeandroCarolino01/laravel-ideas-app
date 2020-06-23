@@ -21,7 +21,7 @@
 
                 <li class="list-group-item">
                     {{ $idea->name }}
-                    <button class="btn btn-primary btn-sm float-right">View</button>
+                    <a href="/ideas/{{ $idea->id }}" class="btn btn-primary btn-sm float-right">View</a>
                 </li>
                 @endforeach
             </ul>

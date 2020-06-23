@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('ideas', 'IdeasController@index');
+Route::get('ideas/{idea}', 'IdeasController@show');
