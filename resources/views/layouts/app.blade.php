@@ -18,6 +18,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="/ideas">Ideas<span class="sr-only">(current)</span></a>
       </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/new-ideas">Create an idea<span class="sr-only">(current)</span></a>
+      </li>
+
+      
     
      
       

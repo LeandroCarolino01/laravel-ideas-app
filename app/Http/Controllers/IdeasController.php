@@ -19,4 +19,24 @@ class IdeasController extends Controller
     public function show($ideaId){
         return view('ideas.show')->with('idea', Idea::find($ideaId));
     }
+
+    public function create(){
+        return view('ideas.create');
+    }
+
+    public function store(){
+        $data = request()->all();
+
+        $idea = new Idea();
+
+        $idea->name = $data['name'];
+
+        $idea->description = $data['description'];
+
+        $idea->completed = false;
+
+        $idea->save();
+
+        return redirect('/ideas');
+    }
 }
