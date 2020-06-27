@@ -25,6 +25,11 @@ class IdeasController extends Controller
     }
 
     public function store(){
+        $this->validate(request(), [
+            'name' => 'required|min:4|max:16',
+            'description' => 'required'
+        ]);
+
         $data = request()->all();
 
         $idea = new Idea();
