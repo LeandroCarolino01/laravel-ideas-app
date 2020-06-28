@@ -20,7 +20,8 @@
          
          <a href="/">back</a>
         </div>
-        <a href="/ideas/{{ $idea->id }}/edit" class="btn btn-info btn-sm my-2">edit</a>
+        <a href="/ideas/{{ $idea->id }}/edit" class="btn btn-info my-2">edit</a>
+        <a href="/ideas/{{ $idea->id }}/delete" class="btn btn-danger my-2">delete</a>
         </div>
     </div>
 @endsection

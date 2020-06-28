@@ -69,4 +69,12 @@ class IdeasController extends Controller
 
         return redirect('/ideas');
     }
+
+    public function destroy($ideaId){
+        $idea = Idea::find($ideaId);
+
+        $idea->delete();
+
+        return redirect('/ideas');
+    }
 }
