@@ -21,3 +21,5 @@ Route::get('ideas', 'IdeasController@index');
 Route::get('ideas/{idea}', 'IdeasController@show');
 Route::get('new-ideas', 'IdeasController@create');
 Route::post('store-ideas', 'IdeasController@store');
+Route::get('ideas/{idea}/edit', 'IdeasController@edit');
+Route::post('ideas/{idea}/update-ideas', 'IdeasController@update');

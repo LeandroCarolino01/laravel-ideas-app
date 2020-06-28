@@ -17,8 +17,10 @@
             <div class="card-body">
                 {{ $idea->description}}
             </div>
+         
          <a href="/">back</a>
         </div>
+        <a href="/ideas/{{ $idea->id }}/edit" class="btn btn-info btn-sm my-2">edit</a>
         </div>
     </div>
 @endsection

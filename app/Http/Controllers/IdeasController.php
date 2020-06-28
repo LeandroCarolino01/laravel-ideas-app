@@ -44,4 +44,29 @@ class IdeasController extends Controller
 
         return redirect('/ideas');
     }
+
+    public function edit($ideaId){
+        $idea = Idea::find($ideaId);
+
+        return view('ideas.edit')->with('idea', $idea);
+    }
+
+    public function update($ideaId){
+        $this->validate(request(), [
+            'name' => 'required|min:4|max:16',
+            'description' => 'required'
+        ]);
+
+        $data = request()->all();
+
+        $idea = Idea::find($ideaId);
+
+        $idea->name = $data['name'];
+
+        $idea->description = $data['description'];
+
+        $idea->save();
+
+        return redirect('/ideas');
+    }
 }
