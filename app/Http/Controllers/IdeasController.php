@@ -16,8 +16,8 @@ class IdeasController extends Controller
         return view('ideas.index')->with('ideas', Idea::all());
     }
 
-    public function show($ideaId){
-        return view('ideas.show')->with('idea', Idea::find($ideaId));
+    public function show(Idea $idea){
+        return view('ideas.show')->with('idea', $idea);
     }
 
     public function create(){
@@ -45,13 +45,13 @@ class IdeasController extends Controller
         return redirect('/ideas');
     }
 
-    public function edit($ideaId){
-        $idea = Idea::find($ideaId);
+    public function edit(Idea $idea){
+        
 
         return view('ideas.edit')->with('idea', $idea);
     }
 
-    public function update($ideaId){
+    public function update(Idea $idea){
         $this->validate(request(), [
             'name' => 'required|min:4|max:16',
             'description' => 'required'
@@ -59,7 +59,6 @@ class IdeasController extends Controller
 
         $data = request()->all();
 
-        $idea = Idea::find($ideaId);
 
         $idea->name = $data['name'];
 
@@ -70,8 +69,8 @@ class IdeasController extends Controller
         return redirect('/ideas');
     }
 
-    public function destroy($ideaId){
-        $idea = Idea::find($ideaId);
+    public function destroy(Idea $idea){
+       
 
         $idea->delete();
 
