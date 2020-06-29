@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group">
-                    <textarea placeholder="description" class="form-control" name="description" rows="5" cols="5">{{ $idea->name }}
+                    <textarea placeholder="description" class="form-control" name="description" rows="5" cols="5">{{ $idea->description }}
                     </textarea>
                 </div>
 

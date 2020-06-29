@@ -42,6 +42,8 @@ class IdeasController extends Controller
 
         $idea->save();
 
+        session()->flash('success', 'idea created successfully.');
+
         return redirect('/ideas');
     }
 
@@ -66,6 +68,9 @@ class IdeasController extends Controller
 
         $idea->save();
 
+        
+        session()->flash('success', 'idea updated successfully.');
+
         return redirect('/ideas');
     }
 
@@ -73,6 +78,9 @@ class IdeasController extends Controller
        
 
         $idea->delete();
+
+        
+        session()->flash('success', 'idea deleted successfully.');
 
         return redirect('/ideas');
     }
