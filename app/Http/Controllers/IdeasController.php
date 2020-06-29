@@ -84,4 +84,14 @@ class IdeasController extends Controller
 
         return redirect('/ideas');
     }
+
+    public function complete(Idea $idea){
+        $idea->completed = true;
+
+        $idea->save();
+
+        session()->flash('success', 'Idea completed');
+
+        return redirect('/ideas');
+    }
 }

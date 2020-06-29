@@ -19,7 +19,11 @@
 
                     <li class="list-group-item">
                         {{ $idea->name }}
-                        <a href="/ideas/{{ $idea->id }}" class="btn btn-primary btn-sm float-right">View</a>
+                        @if(!$idea->completed)
+                            <a href="/ideas/{{ $idea->id }}/complete" style="color:white;" class="btn btn-warning btn-sm float-right">Complete</a>
+                        @endif
+                        <a href="/ideas/{{ $idea->id }}" class="btn btn-primary btn-sm float-right mr-2">View</a>
+                        
                     </li>
                     @endforeach
                 </ul>
